@@ -12,4 +12,6 @@ To install / build / run:
 
 2) `yarn dev` for dev (todo: look at browsersync?) or `yarn make` for production
 
+2a) be sure to copy ./web_model to ./dist/web_model otherwise the model won't load and you'll just get errors
+
 3) copy contents of ./dist to hellercommaa.github.io repo
