@@ -43,7 +43,7 @@
         <h1 class="mt-5">What bird is this?</h1>
         <ul class="list-group text-left">
           <li>Upload a bird image from your computer / phone</li>
-          <li><i>Alternatively, you can paste in an image URL known to contain a bird</i></li>
+          <!-- <li><i>Alternatively, you can paste in an image URL known to contain a bird</i></li> -->
           <li>Press Identify</li>
         </ul>
       </div>
@@ -55,12 +55,12 @@
             <label for="fileUpload">Upload a bird</label>
             <input class="form-control" id="fileUpload" type='file'>
           </div>
-          <div class='form-group mb-3'>
+          <!-- <div class='form-group mb-3'>
             <label for='birdUrl'>Or paste in a URL</label>
             <input class='form-control' id='birdUrl' placeholder='https://www.allaboutbirds.org/guide/assets/photo/60403261-1280px.jpg' />
-          </div>
+          </div> -->
           <button id='clearAllBtn' class='btn btn-danger'>Clear All</button>
-          <button id='identifyBtn' class='btn btn-success'>Identify</button>
+          <button id='identifyBtn' disabled class='btn btn-success'>Identify</button>
         </form>
       </div>
     </div>
@@ -68,10 +68,11 @@
 
   <div class='container'>
     <div class='row'>
-      <div class='col-md-8' id='result'>
+      <div class='col-md-8' id='results'>
       </div>
       <div class='col-md-4'>
-        <img src='birb.jpeg' height='224px' width='224px' id='birb'>
+        <!-- style='display: none'  -->
+        <img height='224px' width='224px' id='birdImage'>
       </div>
     </div>
   </div>

@@ -2,8 +2,6 @@ import * as tf from '@tensorflow/tfjs';
 
 import {IMAGENET_CLASSES} from './imagenet_classes';
 
-const INPUT_NODE_NAME = 'images';
-const OUTPUT_NODE_NAME = 'module_apply_default/MobilenetV2/Logits/output';
 const PREPROCESS_DIVISOR = tf.scalar(255 / 2);
 
 export class MobileNet {
