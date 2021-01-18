@@ -16,14 +16,16 @@ birb.onload = async () => {
   console.timeEnd('Loading of model');
 
   console.time('First prediction');
-  const pixels = tf.browser.fromPixels(birb);
-  let result = mobileNet.predict(pixels);
+  birb.width = '224';
+  birb.height = '224';
+  const image = tf.browser.fromPixels(birb);
+  let result = mobileNet.predict(image);
   const topK = mobileNet.getTopKClasses(result, 5);
   console.timeEnd('First prediction');
 
   resultElement.innerText = '';
   topK.forEach(x => {
-    // resultElement.innerText += `${x.value.toFixed(3)}: ${x.label}\n`;
+    resultElement.innerText += `${x.value.toFixed(3)}: ${x.label}\n`;
   });
 
   mobileNet.dispose();

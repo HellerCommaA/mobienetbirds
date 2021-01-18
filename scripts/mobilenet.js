@@ -25,8 +25,7 @@ export class MobileNet {
         PREPROCESS_DIVISOR);
     const reshapedInput =
         preprocessedInput.reshape([1, ...preprocessedInput.shape]);
-    return this.model.execute(
-        {[INPUT_NODE_NAME]: reshapedInput}, OUTPUT_NODE_NAME);
+    return this.model.execute(reshapedInput);
   }
 
   getTopKClasses(logits, topK) {
@@ -46,7 +45,7 @@ export class MobileNet {
                            return b.value - a.value;
                          })
                          .slice(0, topK);
-
+    console.log(predictionList);
     return predictionList.map(x => {
       return {label: IMAGENET_CLASSES[x.index], value: x.value};
     });
