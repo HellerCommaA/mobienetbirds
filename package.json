@@ -1,0 +1,51 @@
+{
+  "name": "mobilenet-birds",
+  "version": "0.0.1",
+  "description": "Identify birds online with pre-trained tensorflow model",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "@tensorflow/tfjs": "0.15.3",
+    "babel-polyfill": "^6.26.0"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development parcel index.html --no-hmr --open",
+    "make": "NODE_ENV=production parcel index.html --no-hmr"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/polyfill": "~7.2.5",
+    "@babel/preset-env": "~7.3.4",
+    "@babel/runtime": "~7.3.4",
+    "babel-preset-env": "^1.7.0",
+    "clang-format": "~1.2.2",
+    "parcel-bundler": "~1.11.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false,
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 3 versions",
+              "ie >= 9",
+              "ios >= 8",
+              "android >= 4.2"
+            ]
+          },
+          "useBuiltIns": false
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime"
+      ]
+    ]
+  }
+}
